@@ -3,6 +3,16 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+# Gems I Added
+gem 'devise'
+gem 'better_errors'
+gem 'cancan'
+gem 'binding_of_caller'
+
+
+gem 'pry'
+
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
