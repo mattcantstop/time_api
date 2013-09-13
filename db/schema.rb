@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911143736) do
+ActiveRecord::Schema.define(version: 20130913143019) do
+
+  create_table "punch_times", force: true do |t|
+    t.datetime "in"
+    t.datetime "out"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "organization_id"
+    t.string   "tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "punch_times", ["organization_id"], name: "index_punch_times_on_organization_id", using: :btree
+  add_index "punch_times", ["project_id"], name: "index_punch_times_on_project_id", using: :btree
+  add_index "punch_times", ["tag"], name: "index_punch_times_on_tag", using: :btree
+  add_index "punch_times", ["user_id"], name: "index_punch_times_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
