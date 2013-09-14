@@ -1,13 +1,20 @@
 TimeApi::Application.routes.draw do
-  devise_for :users
+  
+  get "users/show"
+  devise_scope :user do
+    root "devise/registrations#new"
+  end
+
+  devise_for :users 
+
+  resources :users do 
+    resources :punch_times
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  
-  devise_scope :user do
-    root "devise/registrations#new"
-  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
