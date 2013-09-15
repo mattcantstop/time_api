@@ -1,0 +1,14 @@
+<%= form_for([@user, @punch_time]) do |f| %>
+<p> In </p>
+<%= f.datetime_field :in %>
+<p> Out </p>
+<%= f.datetime_field  :out %>
+<%= f.hidden_field :user_id %>
+<p> Project Id </p>
+<%= f.text_field :project_id %>
+<p> Organization Id </p>
+<%= f.text_field :organization_id %>
+<p> Tag </p>
+<%= f.text_field :tag %>
+<%= f.submit "Punch In" %>
+<% end %>
