@@ -12,11 +12,12 @@ class PunchTimesController < ApplicationController
 
   def create
   @punch_time = @user.punch_times.new(params[:punch_time])
-    if @punch_time.save
-      redirect_to @punch_time
-    else
-      render "new"
-    end
+  user_on_the_clock?(current_user) ? @punch_time.out = DateTime.now : @punch_time.in = DateTime.now
+  if @punch_time.save
+    redirect_to @punch_time
+  else
+    render "new"
+  end
   end
 
 end

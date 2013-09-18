@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   has_many :organizations
   has_many :user_organizations
 
+
 end
