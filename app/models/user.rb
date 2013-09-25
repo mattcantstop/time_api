@@ -10,5 +10,15 @@ class User < ActiveRecord::Base
   has_many :organizations
   has_many :user_organizations
 
+  def on_the_clock?
+    if self.punch_times.last.in != nil
+      return true
+    elsif self.punch_times.last.out != nil
+      return false
+    else 
+      return self.inspect
+    end 
+  end
+
 
 end

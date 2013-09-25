@@ -1,1 +1,4 @@
-<%= @punch_time %>
+<% @punch_times.each do |punch_time| %>
+<%= punch_time.in.in_time_zone %></br>
+<%= punch_time.out %>
+<% end %>
