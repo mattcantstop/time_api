@@ -4,5 +4,6 @@ class PunchTime < ActiveRecord::Base
   belongs_to :project
   belongs_to :organization
 
+  validates_presence_of :in
 
 end
