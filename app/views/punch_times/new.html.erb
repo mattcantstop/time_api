@@ -1,4 +1,4 @@
-<% if user_on_the_clock?(current_user) %>
+<% if @user.user_on_the_clock? %>
   <%= render 'in' %>
 <% else %>
   <%= render 'out' %>
