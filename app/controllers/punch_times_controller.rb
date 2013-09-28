@@ -7,7 +7,7 @@ class PunchTimesController < ApplicationController
   end
 
   def index
-    @time_zone = Time.zone = 'Hawaii'
+    @time_zone = Time.zone = 'MST'
     @punch_times = @user.punch_times
   end
 
@@ -17,9 +17,11 @@ class PunchTimesController < ApplicationController
 
   def create
     @punch_time = @user.punch_times.new(punch_time_params)
+    @punch_time.in = Time.now
     if @punch_time.save
       redirect_to :action => 'show', :id => [@user, @punch_time]
     else
+      flash[:notice] = "There was an issue."
       render "new"
     end
   end
