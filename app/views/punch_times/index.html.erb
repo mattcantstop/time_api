@@ -1,4 +1,10 @@
-<% @punch_times.each do |punch_time| %>
-<%= punch_time.in.in_time_zone.strftime('%H:%M:%S') %></br>
-<%= punch_time.out.strftime('%H:%M:%S') %>
-<% end %>
+<div>
+  <% @punch_times.each do |punch_time| %>
+    <div>
+      <%= link_to "#{punch_time.in.in_time_zone.strftime('%H:%M:%S')}", user_punch_time_path(@user,punch_time)  %>
+    </div>
+    <div>
+      <%= punch_time.out.strftime('%H:%M:%S') if punch_time.out %>
+    </div>
+  <% end %>
+</div>
