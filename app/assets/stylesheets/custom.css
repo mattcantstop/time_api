@@ -1,3 +1,17 @@
 .navbar {
   background-color: #8CDAF0;
  }
+
+.punch {
+  background-color: #33C9D5;
+  border-radius: 5px;
+  margin: 10px;
+  color: white;
+  padding: 7px;
+  display: block;
+}
+
+.punch .date {
+  text-align: center;
+  size: 1em;
+}
