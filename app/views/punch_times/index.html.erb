@@ -1,5 +1,9 @@
 <div>
+  <%= in_or_out? %>
+</div>
+<div>
   <% @punch_times.each do |punch_time| %>
+    <% if punch_time != nil %>
     <div>
       <%= link_to "#{punch_time.in.in_time_zone.strftime('%H:%M:%S')}", user_punch_time_path(@user,punch_time)  %>
     </div>
@@ -7,4 +11,5 @@
       <%= punch_time.out.strftime('%H:%M:%S') if punch_time.out %>
     </div>
   <% end %>
+<% end %>
 </div>

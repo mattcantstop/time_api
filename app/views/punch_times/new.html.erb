@@ -1,6 +1,1 @@
-<% if @user.user_on_the_clock? %>
-  <%= render 'in' %>
-<% else %>
-  <%= render 'out' %>
-<% end %>
-
+<%= in_or_out? %>
