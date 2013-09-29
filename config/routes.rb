@@ -2,7 +2,7 @@ TimeApi::Application.routes.draw do
   
   get "users/show"
   devise_scope :user do
-    root "devise/registrations#new"
+    root "devise/sessions#new"
   end
 
   devise_for :users 
