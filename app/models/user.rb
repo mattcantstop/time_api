@@ -10,18 +10,16 @@ class User < ActiveRecord::Base
   has_many :organizations
   has_many :user_organizations
 
-  ###
-  # Scopes
-  ###
-  scope :last_punch, -> { where( @user.punchtimes => nil ) }
-
-
   def user_on_the_clock?
-    if punch_times.last.out == nil
+    if last_punch.out == nil
       return true
     else
       return false
     end
+  end
+
+  def last_punch
+    punch_times.last
   end
 
 end
