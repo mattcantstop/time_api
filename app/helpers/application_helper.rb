@@ -8,11 +8,9 @@ module ApplicationHelper
     
   end
 
-  def in_or_out?
-    if @user.user_on_the_clock?
-      return render 'form'
-    else
-      return render 'in'
+  def show_punch_form?
+    if !@user.user_on_the_clock?
+      render 'form'
     end
   end
 

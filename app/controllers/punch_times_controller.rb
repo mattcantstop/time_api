@@ -54,6 +54,17 @@ class PunchTimesController < ApplicationController
     @punch_time = @user.punch_times.find(params[:id])
   end
 
+  def out
+    @punch_time = @user.punch_times.find(params[:id])
+    time_out = Time.now
+    if @punch_time.update_attribute(:out, time_out)
+      redirect_to user_punch_times_path(@user)
+      flash[:notice] = "Successfully punched out."
+    else
+      redirect_to user_punch_times_path(@user)
+    end
+  end
+
   private
 
   def punch_time_params
