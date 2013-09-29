@@ -1,0 +1,4 @@
+<%= form_for([@user, @punch_time]) do |f| %>
+  <%= f.hidden_field :user_id %>
+  <%= f.submit "Punch Out" %>
+<% end %>
