@@ -12,6 +12,7 @@ gem 'binding_of_caller'
 
 gem 'pry'
 
+gem 'rspec-rails', :group => [ :development, :test ]
 
 # Use postgresql as the database for Active Record
 gem 'pg'
