@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def show_punch_form?
-    if !@user.user_on_the_clock?
+    if @user.all_punches_complete?
       render 'form'
     end
   end

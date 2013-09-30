@@ -10,12 +10,8 @@ class User < ActiveRecord::Base
   has_many :organizations
   has_many :user_organizations
 
-  def user_on_the_clock?
-    if punch_times.where(:id => !nil).last.out == nil
-      return true
-    else
-      return false
-    end
+  def all_punches_complete?
+    self.punch_times.any? { |punch_time| punch_time.out.blank? }
   end
 
   def last_punch

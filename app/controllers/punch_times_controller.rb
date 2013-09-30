@@ -16,7 +16,11 @@ class PunchTimesController < ApplicationController
   end
 
   def new
-    @punch_time = @user.punch_times.new(params[:punch_time])
+    if @user.all_punches_complete?
+      @punch_time = @user.punch_times.new(params[:punch_time])
+    else
+      flash[:error] = "You are still clocked in."
+    end
   end
 
   def create
