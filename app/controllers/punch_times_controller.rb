@@ -23,7 +23,8 @@ class PunchTimesController < ApplicationController
     @punch_time = @user.punch_times.new(punch_time_params)
     @punch_time.in = Time.now
     if @punch_time.save
-      redirect_to :action => 'show', :id => [@user, @punch_time]
+      redirect_to user_punch_times_path(@user)
+      flash[:notice] = "Successfully clocked in."
     else
       flash[:notice] = "There was an issue."
       render "new"
