@@ -1,12 +1,16 @@
-<%= form_for [@user, @punch_time], :class => "form-inline" do |f| %>
+<%= form_for [@user, @punch_time], :html => {:class => "form-inline", role: "form"} do |f| %>
   <%= f.hidden_field :user_id %>
-  <p> Project Id </p>
-  <%= f.text_field :project_id %>
-  <p> Organization Id </p>
-  <%= f.text_field :organization_id %>
-  <p> Tag </p>
-  <%= f.text_field :tag %>
-  <%= f.submit "Start Time" %>
+  <div class="form-group">
+    <%= f.label "Project Id", class: "sr-only" %>
+    <%= f.text_field :project_id, class: "form-control", placeholder: "Project"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Organization Id", class: "sr-only" %>
+    <%= f.text_field :organization_id, class: "form-control", placeholder: "Organization" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Tag", class: "sr-only" %>
+    <%= f.text_field :tag, class: "form-control", placeholder: "Tag" %>
+  </div>
+  <%= button_tag "Submit", :class => "btn btn-default", :type => "submit" %>
 <% end %>
-
-
