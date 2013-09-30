@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :user_organizations
 
   def user_on_the_clock?
-    if last_punch.out == nil
+    if punch_times.where(:id => !nil).last.out == nil
       return true
     else
       return false
