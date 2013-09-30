@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :user_organizations
 
   def all_punches_complete?
-    self.punch_times.any? { |punch_time| punch_time.out.blank? }
+    self.punch_times.all? { |punch_time| punch_time.complete? }
   end
 
   def last_punch

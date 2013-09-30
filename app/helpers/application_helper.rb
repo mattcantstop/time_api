@@ -8,7 +8,7 @@ module ApplicationHelper
     
   end
 
-  def show_punch_form?
+  def show_punch_form
     if @user.all_punches_complete?
       render 'form'
     end

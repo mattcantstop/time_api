@@ -1,4 +1,4 @@
-<%= form_for [@user, @punch_time], :html => {:class => "form-inline", role: "form"} do |f| %>
+<%= form_for [@user, PunchTime.new], :html => {:class => "form-inline", role: "form"} do |f| %>
   <%= f.hidden_field :user_id %>
   <div class="form-group">
     <%= f.label "Project Id", class: "sr-only" %>

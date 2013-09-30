@@ -6,4 +6,8 @@ class PunchTime < ActiveRecord::Base
 
   validates_presence_of :in
 
+  def complete?
+    self.out.present?
+  end
+
 end

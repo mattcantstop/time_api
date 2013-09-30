@@ -7,12 +7,7 @@ class PunchTimesController < ApplicationController
   end
 
   def index
-    @punch_time = @user.punch_times.new(params[:punch_time])
-    @time_zone = Time.zone = 'MST'
-    @punch_times = @user.punch_times.map! { |punch_time| punch_time if !punch_time.id.blank? }
-    @punch_time = @user.punch_times.new(params[:punch_time])
-    @current_punch = @user.last_punch
-    @punch_time.in = Time.now
+    @punch_times = @user.punch_times
   end
 
   def new
