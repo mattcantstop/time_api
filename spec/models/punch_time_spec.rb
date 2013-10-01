@@ -14,4 +14,17 @@ describe PunchTime do
 
   end
 
+  context "behavior based on #complete?" do
+    context "when complete" do
+      let(:punch_time) { PunchTime.new(:in => DateTime.now, :out => DateTime.new ) }
+      specify { punch_time.complete?.should be_true }
+    end
+
+    context "when incomplete" do
+      let(:punch_time) { PunchTime.new(:in => DateTime.now ) }
+      specify { punch_time.complete?.should be_false }
+    end
+
+  end
+
 end
