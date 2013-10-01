@@ -5,9 +5,12 @@ gem 'rails', '4.0.0'
 
 # Gems I Added
 gem 'devise'
-gem 'better_errors'
 gem 'cancan'
-gem 'binding_of_caller'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 
 gem 'pry'
