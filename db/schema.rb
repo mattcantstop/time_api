@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130913143019) do
+ActiveRecord::Schema.define(version: 20131002011220) do
 
   create_table "punch_times", force: true do |t|
     t.datetime "in"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20130913143019) do
     t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "total_punch_time"
   end
 
   add_index "punch_times", ["organization_id"], name: "index_punch_times_on_organization_id", using: :btree
