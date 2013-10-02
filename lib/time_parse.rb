@@ -18,12 +18,18 @@ module Duration
   MINUTE = 60
   SECOND = 1
 
+  def set_this(
+    
+  end
 
-  def self.calculate(int)
+  def self.calculate_years(int)
     if int.should_calculate?(YEAR)
       years = int/YEAR if int >= YEAR
       years_remainder = int % YEAR
     end
+  end
+
+  def self.calculate_months(int)
     if years_remainder
       if years_remainder.should_calculate?(MONTH)
         months = years_remainder / MONTH
@@ -35,6 +41,9 @@ module Duration
         months_remainder = int % MONTH
       end
     end
+  end
+
+  def self.calculate_weeks(int)
     if months_remainder
       if months_remainder.should_calculate?(WEEK)
         weeks = months_remainder / WEEK
@@ -51,6 +60,9 @@ module Duration
         weeks_remainder = int % WEEK
       end
     end
+  end
+
+  def self.calculate_days(int)
     if weeks_remainder
       if weeks_remainder.should_calculate?(DAY)
         days = weeks_remainder / DAY
@@ -72,6 +84,9 @@ module Duration
         days_remainder = int % DAY
       end
     end
+  end
+
+  def self.calculate_hours(int)
     if days_remainder
       if days_remainder.should_calculate?(HOUR)
         hours = days_remainder / HOUR
@@ -98,6 +113,9 @@ module Duration
         hours_remainder = int % HOUR
       end
     end
+  end
+
+  def self.calculate_minutes:(int)
     if hours_remainder
       if hours_remainder.should_calculate?(MINUTE)
         minutes = hours_remainder / MINUTE
@@ -129,6 +147,9 @@ module Duration
         minutes_remainder = int % MINUTE
       end
     end
+  end
+
+  def self.calculate_seconds(int)
     if minutes_remainder
       if minutes_remainder.should_calculate?(SECOND)
         seconds = minutes_remainder / SECOND
