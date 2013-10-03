@@ -10,10 +10,10 @@
   <div>
     <% if punch_time.complete? %>
       <%= punch_time.out.strftime('%H:%M:%S') if punch_time.out %>
-      <%= display_punch_duration(punch_time.total_punch_time) %>
+      <%= display_punch_duration(punch_time.total_punch_time) if punch_time.total_punch_time %>
     <% else %>
       <%= link_to "Punch Out", user_out_path(current_user, punch_time.id), :method=> :put %>
-  <% end %>
+    <% end %>
   </div>
 </div>
 <% end %>

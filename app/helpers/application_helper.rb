@@ -10,7 +10,7 @@ module ApplicationHelper
         duration = duration % value if numerator
         response << "#{numerator} #{time} " if numerator
       end
-      puts response
+      return response
     end
   end
 
