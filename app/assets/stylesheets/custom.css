@@ -2,33 +2,19 @@
   background-color: #8CDAF0;
  }
 
-.punch {
-  border-top: 3px solid #33C9D5;
-  border-bottom: 3px solid #33C9D5;
-  border-radius: 5px;
-  margin: 10px;
+form {
+  text-align: center;
+}
+
+.date_heading {
   color: #33C9D5;
-  font-family: Helvetica;
-  display: block;
-  min-height: 140px;
 }
 
-.punch .date {
-  text-align: center;
-  font-size: 1.5em;
+.punch {
+  border-top: 1px solid #33C9D5;
 }
 
-.punch .in, .out {
-  width: 50%;
-  height: 25%;
-  display: inline;
-}
-
-
-.punch .time {
-  font-size: .5em;
-}
-
-.form-inline {
-  text-align: center;
+.date {
+  text-decoration: bold;
+  color: red;
 }
