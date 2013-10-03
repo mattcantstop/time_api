@@ -9,6 +9,7 @@
   color: white;
   padding: 7px;
   display: block;
+  min-height: 100px;
 }
 
 .punch .date {
