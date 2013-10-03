@@ -2,15 +2,14 @@ module ApplicationHelper
   module ElapsedTime 
 
     def self.calculate(duration)
-      times = {years: 31536000, months: 2678400, days: 86400, hours: 3600, minutes: 60, seconds: 1}
-      response = ''
-      duration = duration
-      times.each do |time, value|
-        numerator = duration / value if duration >= value
-        duration = duration % value if numerator
-        response << "#{numerator} #{time} " if numerator
+      time_measurements = {years: 31536000, months: 2678400, days: 86400, hours: 3600, minutes: 60, seconds: 1}
+      display_text  = ''
+      time_measurements.each do |time_description, time_in_seconds|
+        quotient = duration / time_in_seconds if duration >= time_in_seconds
+        duration = duration % time_in_seconds if quotient
+        display_text << "#{quotient} #{time_description} " if quotient
       end
-      return response
+      return display_text
     end
   end
 

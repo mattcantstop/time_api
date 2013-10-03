@@ -21,3 +21,8 @@ form {
   color: red;
   font-size: 1.4em;
 }
+
+button .submit-out {
+  width: 100%;
+  background-color: #33C9D5;
+}
