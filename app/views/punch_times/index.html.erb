@@ -1,28 +1,23 @@
 <%= show_punch_form %>
 <% @punch_times.each do |punch_time| %>
-  <div class='punch col-md-2'>
-    <div class='date'>
-      <%= punch_time.in.strftime('%b %d') %>
-    </div>
-    <div class='in'>
-      IN
-    </div>
-    <div class='out'>
-      OUT
-    </div>
-    <div>
-      <%= link_to "#{punch_time.in.strftime('%H:%M:%S')}", user_punch_time_path(@user,punch_time)  %>
-    </div>
-  <% if punch_time.complete? %>
-    <div class='time'>
+    <div class='punch col-md-2'>
+  <div class='date'>
+    <%= punch_time.in.strftime('%b %d') %>
+  </div>
+  <div>
+    <%= link_to "#{punch_time.in.strftime('%H:%M:%S')}", user_punch_time_path(@user,punch_time)  %>
+  </div>
+  <div>
+    <% if punch_time.complete? %>
+        <div>
       <%= punch_time.out.strftime('%H:%M:%S') if punch_time.out %>
     </div>
     <div>
       <%= display_punch_duration(punch_time.total_punch_time) if punch_time.total_punch_time %>
     </div>
-  <% else %>
-    <%= link_to "Punch Out", user_out_path(current_user, punch_time.id), :method=> :put %>
-  <% end %>
+    <% else %>
+        <%= link_to "Punch Out", user_out_path(current_user, punch_time.id), :method=> :put %>
+    <% end %>
   </div>
 </div>
 <% end %>
