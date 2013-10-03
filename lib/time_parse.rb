@@ -1,21 +1,21 @@
 module Duration
 
-  times = {year: 31536000, month: 2678400, week: 604800, day: 86400, hour: 3600, minute: 60, seconds: 1}
 
-  def process(duration)
+  def self.calculate(duration)
+    times = {years: 31536000, months: 2678400, weeks: 604800, days: 86400, hours: 3600, minutes: 60, seconds: 1}
     response = ''
     duration = duration
     times.each do |time, value|
-      numerator = duration / value
-      remainder = duration / value
-      response <<  "#{numerator} #{time}s "
+      numerator = duration / value if duration >= value
+      duration = duration % value if numerator
+      response << "#{numerator} #{time} "
     end
-    return response
+    puts response
   end
 
 end
 
-Duration.write_values(99030720045, Duration::YEAR,"year")
+Duration.calculate(99030720045)
 
 
 
