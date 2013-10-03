@@ -14,4 +14,5 @@ class PunchTime < ActiveRecord::Base
   def calculate_total_punch_time
     self.total_punch_time = self.out.to_i - self.in.to_i 
   end
+
 end
