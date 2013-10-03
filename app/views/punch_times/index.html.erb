@@ -3,12 +3,16 @@
 <% @punch_times.each do |punch_time| %>
   <div class='punch col-md-9'>
     <span class='date col-md-2'><%= punch_time.in.strftime('%b %d') %></span>
-    <%=link_to "#{punch_time.in.strftime('%H:%M:%S')}", user_punch_time_path(@user, punch_time) %> -
+    <%=link_to "#{punch_time.in.strftime('%H:%M:%S')}", user_punch_time_path(@user, punch_time), class: "col-md-2" %>
     <% if punch_time.complete? %>
-      <%= punch_time.out.strftime('%H:%M:%S') if punch_time.out %>
-      <%= display_punch_duration(punch_time.total_punch_time) if punch_time.total_punch_time %>
+      <span class="col-md-2">
+        <%= punch_time.out.strftime('%H:%M:%S') if punch_time.out %>
+      </span>
+      <span class="col-md-3">
+        <%= display_punch_duration(punch_time.total_punch_time) if punch_time.total_punch_time %>
+      </span>
     <% else %>
-        <%= link_to "Punch Out", user_out_path(current_user, punch_time.id), :method=> :put %>
+        <%= button_to "Punch Out", user_out_path(current_user, punch_time.id), :method=> :put %>
       <% end %>
   </div>
 <% end %>

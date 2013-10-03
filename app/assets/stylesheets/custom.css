@@ -11,7 +11,9 @@ form {
 }
 
 .punch {
-  border-top: 1px solid #33C9D5;
+  text-align: center;
+  margin: 5px 0;
+  line-height: 1.4em;
 }
 
 .date {
