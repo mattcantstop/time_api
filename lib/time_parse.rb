@@ -13,14 +13,3 @@ module Duration
   end
 
 end
-
-Duration.calculate(99720045)
-
-
-
-
-
-
-
-
-
