@@ -12,6 +12,7 @@ form {
 
 .punch {
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
   margin: 5px 0;
   line-height: 1.4em;
 }
@@ -25,4 +26,8 @@ form {
 button .submit-out {
   width: 100%;
   background-color: #33C9D5;
+}
+
+.alert {
+  text-align: center;
 }
