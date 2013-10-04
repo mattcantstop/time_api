@@ -12,21 +12,16 @@ form {
 
 .punch {
   font-family: 'Open Sans', sans-serif;
-  margin: 5px 0;
-  line-height: 1.4em;
+  line-height: 2.7em;
+  border-bottom: 1px solid #e9eaf0;
+  display:inline-block
+  vertical-align:middle
 }
 
-.date {
-  text-decoration: bold;
-  color: red;
-  font-size: 1.4em;
+.punch .date {
+  font-weight: 800; 
 }
 
-button .submit-out {
-  width: 100%;
-  background-color: #33C9D5;
-}
-
-.alert {
-  text-align: center;
+.punch button {
+  float:right;
 }
