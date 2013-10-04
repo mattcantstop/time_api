@@ -12,7 +12,9 @@
         <%= display_punch_duration(punch_time.total_punch_time) if punch_time.total_punch_time %>
       </span>
     <% else %>
+      <span class='col-md-2'>
       <%= button_to "Punch Out", user_out_path(current_user, punch_time.id), :method=> :put, class: "btn-info btn-sm" %>
+    </span>
     <% end %>
   </div>
 <% end %>
