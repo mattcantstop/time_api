@@ -18,8 +18,13 @@ form {
   vertical-align:middle
 }
 
-.punch .date {
-  font-weight: 800; 
+.punch_times {
+  font-weight: 800;
+  padding-right: 15px;
+}
+
+.descrip {
+  padding-right: 15px;
 }
 
 .punch_out a{

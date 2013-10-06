@@ -1,7 +1,6 @@
 class PunchTimesController < ApplicationController
 
-  before_filter :get_user
-
+  before_filter :get_user, :authenticate_user!
   def get_user
     @user = current_user
   end

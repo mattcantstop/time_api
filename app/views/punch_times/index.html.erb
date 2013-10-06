@@ -1,12 +1,16 @@
-<%= show_punch_form %>
+<div class="row">
+  <%= show_punch_form %>
+</div>
 <h3 class='date_heading'> Today </h3>
 <% @punch_times.each do |punch_time| %>
-  <div class='punch col-md-12'>
-    <span><%= punch_time.description %></span>
-    <span>
-      <%=link_to "#{hour_and_minute(punch_time.in)} - #{hour_and_minute(punch_time.out) if punch_time.out}", user_punch_time_path(@user, punch_time) %>
+  <div class="row">
+    <div class='punch col-md-12'>
+      <span class="descrip"><%= punch_time.description if punch_time.description %></span>
+      <span>
+        <%=link_to "#{hour_and_minute(punch_time.in)} - #{hour_and_minute(punch_time.out) if punch_time.out}", user_punch_time_path(@user, punch_time), class: "punch_times" %>
     <% if punch_time.complete? %>
-     </span>
+    </span>
+  </div>
      <span>
         <%= display_punch_duration(punch_time.total_punch_time) if punch_time.total_punch_time %>
       </span>

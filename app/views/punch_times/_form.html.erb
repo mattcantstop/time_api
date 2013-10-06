@@ -1,5 +1,6 @@
-<%= form_for [@user, PunchTime.new], :html => {:class => "form-inline", role: "form"} do |f| %>
-  <%= f.hidden_field :user_id %>
+<div class="row">
+  <%= form_for [@user, PunchTime.new], :html => {:class => "form-inline", role: "form"} do |f| %>
+    <%= f.hidden_field :user_id %>
   <div class="form-group">
     <%= f.label "Project Id", class: "sr-only" %>
     <%= f.text_field :project_id, class: "form-control", placeholder: "Project"  %>
@@ -13,4 +14,5 @@
     <%= f.text_field :description, class: "form-control", placeholder: "Description" %>
   </div>
   <%= button_tag "Submit", :class => "btn btn-default", :type => "submit" %>
-<% end %>
+  <% end %>
+</div>
