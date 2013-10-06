@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002011220) do
+ActiveRecord::Schema.define(version: 20131006020448) do
 
   create_table "punch_times", force: true do |t|
     t.datetime "in"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20131002011220) do
     t.string   "time_zone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "time_zone_pref"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
