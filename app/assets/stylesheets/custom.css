@@ -22,7 +22,7 @@ form {
   font-weight: 800; 
 }
 
-.punch .punch_out {
+.punch_out a{
   width: 50px;
   height: 23px;
   text-align: center;

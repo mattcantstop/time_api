@@ -4,9 +4,9 @@
   <div class='punch col-md-9'>
     <span class='date col-md-2'><%= punch_time.in.strftime('%b %d') %></span>
     <span>
-      <%=link_to "#{punch_time.in.strftime('%H:%M:%S')}", user_punch_time_path(@user, punch_time), class: "col-md-2" %>
+      <%=link_to "#{hour_and_minute(punch_time.in)}", user_punch_time_path(@user, punch_time), class: "col-md-2" %>
     <% if punch_time.complete? %>
-      <%= punch_time.out.strftime('%H:%M:%S') if punch_time.out %>
+      <%= hour_and_minute(punch_time.out) if punch_time.out %>
      </span>
      <span>
         <%= display_punch_duration(punch_time.total_punch_time) if punch_time.total_punch_time %>

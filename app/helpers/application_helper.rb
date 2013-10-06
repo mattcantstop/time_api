@@ -27,4 +27,9 @@ module ApplicationHelper
     ElapsedTime.calculate(int)
   end
 
+  def hour_and_minute(punch)
+    punch.strftime('%H:%M')
+  end
+
+
 end
