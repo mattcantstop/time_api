@@ -10,7 +10,7 @@
 </div>
 <% @punch_times.each do |punch_time| %>
   <div class="row">
-    <% if punch_time.description %>
+    <% if !punch_time.description.blank?   %>
       <div class='col-md-2'>
         <span><%= punch_time.description if punch_time.description %></span>
       </div>
