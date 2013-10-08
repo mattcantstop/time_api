@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     user_punch_times_path(@user)
   end
 
+  def get_user
+    @user = current_user
+  end
+
 end

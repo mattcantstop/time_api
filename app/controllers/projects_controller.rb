@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
 
+  before_filter :get_user, :authenticate_user!
+
   def new
-    @project = @user.project.new(params[:project])
+    @project = @user.projects.new(params[:project])
   end
 
   def create
@@ -15,6 +17,12 @@ class ProjectsController < ApplicationController
       # Add actual errors in array
       flash[:error] = "Did not successfully save"
     end
+  end
+
+  private
+
+  def project_params
+    params.require(:project).permit(:name, :owner_id)
   end
 
 end

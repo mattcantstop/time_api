@@ -1,10 +1,7 @@
 class PunchTimesController < ApplicationController
 
   before_filter :get_user, :authenticate_user!
-  def get_user
-    @user = current_user
-  end
-
+  
   def index
     @punch_times = @user.punch_times
   end
@@ -68,6 +65,10 @@ class PunchTimesController < ApplicationController
 
   def punch_time_params
     params.require(:punch_time).permit(:in, :out, :description, :user_id, :project_id, :organization_id, :tag)
+  end
+
+  def get_user
+    @user = current_user
   end
 
 end

@@ -1,0 +1,4 @@
+<%= form_for([@user,@project]) do |f| %>
+  <%= f.text_field :name, placeholder: "Project Name" %>
+  <%= button_tag "Submit Project", class: "btn btn-default", type: "submit" %>
+<% end %>
