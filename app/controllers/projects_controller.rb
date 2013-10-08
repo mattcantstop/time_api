@@ -7,10 +7,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = @user.project.new(params[:project])
-    @project.owner_id = params[:user_id]
+    @project = @user.projects.new(project_params)
     if @project.save
-      redirect_to users_punch_times_path(@user)
+      redirect_to user_punch_times_path(@user)
       flash[:notice] = "Project created successfully."
     else
       redirect_to new_user_project(@user)
@@ -22,7 +21,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :owner_id)
+    params.require(:project).permit(:name, :user_id)
   end
 
 end
