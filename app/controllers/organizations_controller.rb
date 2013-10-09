@@ -3,7 +3,7 @@ class OrganizationsController < ApplicationController
   before_filter :get_user
   
   def new
-    @organization = @user.organizations.new(organization_params)
+    @organization = @user.organizations.new(params[:organization])
   end
 
   private
