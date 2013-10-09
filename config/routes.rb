@@ -11,6 +11,11 @@ TimeApi::Application.routes.draw do
     resources :punch_times
     match "punch_times/:id/out" => "punch_times#out", via: :put, as: :out
     resources :projects
+    resources :organizations
+  end
+
+  resources :organizations do
+    resources :projects
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
