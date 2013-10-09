@@ -1,7 +1,13 @@
-<div class="creation_station">
-  <ul class="links">
+<div class="creation_station row">
+  <ul class="nav">
     <li class='link'>
       <%= link_to "Create Organization", new_user_organization_url(@user) %>
+    </li>
+    <li class="link">
+      <%= link_to "Create Project", new_user_project_url(@user) %>
+    </li>
+    <li class="link">
+      <%= link_to "Create Punch Time", user_punch_times_url(@user) %>
     </li>
   </ul>
 </div>
