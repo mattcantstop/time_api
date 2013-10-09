@@ -40,3 +40,21 @@ form {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.creation_station {
+  color:green;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul .links {
+  list-style-type: none;
+  padding: 10px;
+}
+
+li .link {
+
+}
