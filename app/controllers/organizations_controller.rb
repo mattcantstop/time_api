@@ -6,6 +6,21 @@ class OrganizationsController < ApplicationController
     @organization = @user.organizations.new(params[:organization])
   end
 
+  def create
+    @organization = @user.organizations.new(organization_params)
+    if @organization.save
+      redirect_to @organization
+      flash[:notice] = "Successfully created organization."
+    else
+      redirect_to new_user_organization(@user)
+      flash[:error] = "Organization did not save successfully."
+    end
+  end
+
+  def show
+    @organization = Organization.find(params[:id])
+  end
+
   private
 
   def organization_params
