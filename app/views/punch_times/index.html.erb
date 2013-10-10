@@ -28,11 +28,6 @@
         <span><%= punch_time.description if punch_time.description %></span>
       </div>
     <% end %>
-      <div class='col-md-2'>
-        <span>
-          <%=link_to "#{hour_and_minute(punch_time.in)} - #{hour_and_minute(punch_time.out) if punch_time.out}", user_punch_time_path(@user, punch_time), class: "punch_times" %>
-        </span>
-      </div>
     <% if punch_time.complete? %>
       <div class="col-md-3">
         <span>
@@ -44,8 +39,5 @@
         <%= link_to "Out", user_out_path(current_user, punch_time.id), :method=> :put, class: "punch_out" %>
       </div>
     <% end %>
-      <div class='col-md-1'>
-        <%= punch_time.tag %>
-      </div>
   </div>
 <% end %>
