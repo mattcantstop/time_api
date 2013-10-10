@@ -3,7 +3,7 @@ class PunchTimesController < ApplicationController
   before_filter :get_user, :authenticate_user!
   
   def index
-    @punch_times = @user.punch_times
+    @punch_times = @user.punch_times.limit(20)
   end
 
   def new
