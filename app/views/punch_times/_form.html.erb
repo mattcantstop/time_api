@@ -3,7 +3,7 @@
 <% if belongs_to_org? %>
 <div class="form-group input-sm">
   <%= f.label "Organization Id", class: "sr-only" %>
-  <%= f.collection_select(:organization, :organization_id, Organization.where(:id => @user.id), :id, :name, {:prompt => "Organization (optional)"}, {class: "form-control"})  %>
+  <%= collection_select(:organization, :organization_id, Organization.where(:id => @user.id), :id, :name, {:prompt => "Organization (optional)"}, {class: "form-control"})  %>
 </div>
 <% end %>
 <div class="form-group input-sm">
