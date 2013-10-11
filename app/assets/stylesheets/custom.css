@@ -62,7 +62,6 @@ ul {
   *display:inline;
   line-height: 2em;
   font-size: 1.7em;
-  background-color: #00b7cd;
   padding: 2px 4px;
   color: #fff;
   border-radius: 3px;
@@ -71,5 +70,10 @@ ul {
 }
 
 .link a {
-  color: white;
+  color: #00b7cd;
+}
+
+link a:hover {
+  background-color: #00b7cd;
+  color: #fff;
 }
