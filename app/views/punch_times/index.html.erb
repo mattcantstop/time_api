@@ -22,19 +22,17 @@
   </div>
 </div>
 <% @punch_times.each do |punch_time| %>
-  <div class="row">
+  <div class="row punch">
     <div class='date col-md-2'>
       <%= month_and_day(punch_time.in) %>
     </div>
-    <% if !punch_time.description.blank?   %>
       <div class='col-md-2'>
         <span><%= punch_time.description if punch_time.description %></span>
       </div>
-    <% end %>
     <% if punch_time.complete? %>
       <div class="col-md-3">
         <span>
-          <%= display_punch_duration(punch_time.total_punch_time) if punch_time.total_punch_time %>
+          <%= link_to "#{ display_punch_duration(punch_time.total_punch_time) }", user_punch_time_url(@user, punch_time) if punch_time.total_punch_time %>
         </span>
       </div>
     <% else %>
