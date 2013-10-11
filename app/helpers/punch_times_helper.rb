@@ -8,4 +8,8 @@ module PunchTimesHelper
     end
   end
 
+  def month_and_day(punch)
+    punch.strftime('%b %d')
+  end
+
 end

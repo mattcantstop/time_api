@@ -6,8 +6,10 @@ form {
   text-align: center;
 }
 
-.date_heading {
+.date {
   color: #33C9D5;
+  font-size: 1.7em;
+  font-weight: 400;
 }
 
 .punch {

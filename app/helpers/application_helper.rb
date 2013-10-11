@@ -31,5 +31,4 @@ module ApplicationHelper
     punch.strftime('%H:%M')
   end
 
-
 end

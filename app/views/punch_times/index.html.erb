@@ -23,6 +23,9 @@
 </div>
 <% @punch_times.each do |punch_time| %>
   <div class="row">
+    <div class='date col-md-2'>
+      <%= month_and_day(punch_time.in) %>
+    </div>
     <% if !punch_time.description.blank?   %>
       <div class='col-md-2'>
         <span><%= punch_time.description if punch_time.description %></span>
