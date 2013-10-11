@@ -7,9 +7,9 @@ form {
 }
 
 .date {
-  color: #33C9D5;
+  color: #00b7cd;
   font-size: 1.7em;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 .punch {
@@ -52,20 +52,24 @@ ul {
   list-style-type: none;
 }
 
-ul .links {
+.links {
   list-style-type: none;
   padding: 10px;
 }
 
-li {
-  
-}
-
-li .link {
+.link {
   display: inline-block;   /* You can also add some margins here to make it look prettier */
   *display:inline;
+  line-height: 2em;
+  font-size: 1.7em;
+  background-color: #00b7cd;
+  padding: 2px 4px;
+  color: #fff;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 
-li .link a {
-  color: red;
+.link a {
+  color: white;
 }

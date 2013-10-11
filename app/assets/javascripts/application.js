@@ -22,10 +22,4 @@ window.setTimeout(function() {
   });
 }, 5500);
 
-// table row linking
-$(window.location.hash).closest('tr').addClass('info');
-$('.row-number-link').on('click', function (evt) {
-$('.row-number-link').closest('date').removeClass('info');
-  var row = $(this).closest('.date');
-  row.addClass('info');
-});
+
