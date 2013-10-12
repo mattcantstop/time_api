@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009010231) do
+ActiveRecord::Schema.define(version: 20131012191053) do
 
   create_table "organizations", force: true do |t|
     t.string   "name"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20131009010231) do
     t.datetime "updated_at"
     t.integer  "total_punch_time"
     t.string   "description"
+    t.decimal  "latitude",         precision: 10, scale: 6
+    t.decimal  "longitude",        precision: 10, scale: 6
   end
 
   add_index "punch_times", ["organization_id"], name: "index_punch_times_on_organization_id", using: :btree
