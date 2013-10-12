@@ -1,18 +1,27 @@
-<div class="row">
-  <%= month_and_day(@punch_time.in) %>
-</div>
 <div class='row'>
-  <%= @punch_time.in %>
-</div>
-<div class='row'>
-  <%= @punch_time.out %>
-</div>
-<div class="row">
-  <%= display_punch_duration(@punch_time.total_punch_time) %>
-</div>
-<div class="row">
-  <%= @organization.name if @organization %>
-</div>
-<div class="row">
-  <%= @project.name if @project %>
+  <div class='col-md-6'>
+    <h3 class="punch_date"><%= month_and_day(@punch_time.in) %></h3> 
+    <table class="table table-striped">
+      <tr>
+        <td style="width: 25%">Time In:</td>
+        <td><%= @punch_time.in %></td>
+      </tr>
+      <tr>
+        <td style="width: 25%">Time Out:</td>
+        <td><%= @punch_time.out %></td>
+      </tr>
+      <tr>
+        <td style="width:25%">Duration</td>
+        <td><%= display_punch_duration(@punch_time.total_punch_time) %></td>
+      </tr>
+      <tr>
+        <td style="width: 25%">Organization</td>
+        <td><%= @organization.name if @organization %></td>
+      </tr>
+      <tr>
+        <td style="width: 25%">Project</td>
+        <td><%= @project.name if @project %></td>
+      </tr>
+    </table>
+  </div>
 </div>
