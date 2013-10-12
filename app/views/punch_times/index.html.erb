@@ -26,7 +26,7 @@
     <div class='date col-md-3'>
       <%= month_and_day(punch_time.in) %>
     </div>
-      <div class='col-md-3'>
+      <div class='col-md-4'>
         <span><%= punch_time.description if punch_time.description %></span>
       </div>
     <% if punch_time.complete? %>
@@ -37,7 +37,7 @@
       </div>
     <% else %>
       <div class='col-md-2'>
-        <%= link_to "Out", user_out_path(current_user, punch_time.id), :method=> :put, class: "punch_out" %>
+        <%= link_to "Clock Out", user_out_path(current_user, punch_time.id), :method=> :put, class: "punch_out" %>
       </div>
     <% end %>
   </div>
