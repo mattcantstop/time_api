@@ -23,10 +23,10 @@
 </div>
 <% @punch_times.each do |punch_time| %>
   <div class="row punch">
-    <div class='date col-md-2'>
+    <div class='date col-md-3'>
       <%= month_and_day(punch_time.in) %>
     </div>
-      <div class='col-md-2'>
+      <div class='col-md-3'>
         <span><%= punch_time.description if punch_time.description %></span>
       </div>
     <% if punch_time.complete? %>

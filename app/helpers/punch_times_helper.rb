@@ -9,7 +9,7 @@ module PunchTimesHelper
   end
 
   def month_and_day(punch)
-    punch.strftime('%b %d')
+    punch.strftime('%a, %b %d')
   end
 
 end

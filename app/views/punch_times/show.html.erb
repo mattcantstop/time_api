@@ -1,6 +1,18 @@
-<%= @punch_time.in %>
-<%= @punch_time.out %>
-<%= @punch_time.tag %>
-<%= @punch_time.user_id %>
-<%= @punch_time.project_id if @punch_time.project_id != nil %>
-<%= @punch_time.organization_id if @punch_time.organization_id != nil %>
+<div class="row">
+  <%= month_and_day(@punch_time.in) %>
+</div>
+<div class='row'>
+  <%= @punch_time.in %>
+</div>
+<div class='row'>
+  <%= @punch_time.out %>
+</div>
+<div class="row">
+  <%= display_punch_duration(@punch_time.total_punch_time) %>
+</div>
+<div class="row">
+  <%= @organization.name if @organization %>
+</div>
+<div class="row">
+  <%= @project.name if @project %>
+</div>

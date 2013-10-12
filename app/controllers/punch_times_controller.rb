@@ -3,7 +3,7 @@ class PunchTimesController < ApplicationController
   before_filter :get_user, :authenticate_user!
   
   def index
-    @punch_times = @user.punch_times.limit(20)
+    @punch_times = @user.punch_times.limit(20).order("created_at DESC")
   end
 
   def new
@@ -49,6 +49,8 @@ class PunchTimesController < ApplicationController
 
   def show
     @punch_time = @user.punch_times.find(params[:id])
+    @organization = Organization.find(@punch_time.organization_id) if @punch_time.organization_id 
+    @project = Project.find(@punch_time.project_id) if @punch_time.project_id
   end
 
   def out
