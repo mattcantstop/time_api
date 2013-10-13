@@ -5,7 +5,7 @@ class PunchTime < ActiveRecord::Base
   belongs_to :organization
 
   validates_presence_of :in
-  before_save :calculate_total_punch_time
+  before_update :calculate_total_punch_time, :on=>:create
 
   def complete?
     self.out.present?
