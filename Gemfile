@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 # Gems I Added
 gem 'devise'
 gem 'cancan'
+gem 'therubyracer'
 
 group :development do
   gem 'better_errors'
