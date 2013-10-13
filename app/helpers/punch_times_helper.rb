@@ -12,4 +12,8 @@ module PunchTimesHelper
     punch.strftime('%a, %b %d')
   end
 
+  def date_and_time(punch)
+    punch.strftime('%b %e, %Y %T')
+  end
+
 end

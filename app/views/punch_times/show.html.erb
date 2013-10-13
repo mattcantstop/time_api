@@ -4,11 +4,11 @@
     <table class="table table-striped">
       <tr>
         <td style="width: 25%">Time In:</td>
-        <td><%= @punch_time.in %></td>
+        <td><%= date_and_time(@punch_time.in) %></td>
       </tr>
       <tr>
         <td style="width: 25%">Time Out:</td>
-        <td><%= @punch_time.out %></td>
+        <td><%= date_and_time(@punch_time.out) %></td>
       </tr>
       <tr>
         <td style="width:25%">Duration</td>
