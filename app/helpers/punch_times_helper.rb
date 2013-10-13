@@ -16,4 +16,8 @@ module PunchTimesHelper
     punch.strftime('%b %e, %Y %T')
   end
 
+  def has_location?(punch)
+    return true ? !punch.latitude.blank? : false
+  end
+
 end
