@@ -1,5 +1,7 @@
 <%= form_for [@user, PunchTime.new], :html => {:class => "form-inline", role: "form"} do |f| %>
   <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :latitude, id: "latitude" %>
+  <%= f.hidden_field :longitude, id: "longitude" %>
 <% if belongs_to_org? %>
 <div class="form-group input-sm">
   <%= f.label "Organization Id", class: "sr-only" %>
@@ -18,3 +20,8 @@
   <%= button_tag "Submit", :class => "btn btn-default", :type => "submit" %>
 </div>
 <% end %>
+<div id="message">
+</div>
+<script>
+  navigator.geolocation.getCurrentPosition(successHandler, errorHandler);
+</script>

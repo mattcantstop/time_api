@@ -22,6 +22,17 @@
         <td style="width: 25%">Project</td>
         <td><%= @project.name if @project %></td>
       </tr>
+      <tr>
+        <td style="width: 25%">Latitude</td>
+        <td><%= @punch_time.latitude %>
+      </tr>
+      <tr>
+        <td style="width: 25%">Longitude</td>
+        <td><%= @punch_time.longitude %>
+      </tr>
     </table>
+  </div>
+  <div class="punch col-md-4">
+    <img src="http://maps.googleapis.com/maps/api/staticmap?markers=color:blue%7Clabel:PunchIn%7C<%=@punch_time.latitude%>,<%=@punch_time.longitude%>&zoom=12&size=250x250&sensor=false">
   </div>
 </div>

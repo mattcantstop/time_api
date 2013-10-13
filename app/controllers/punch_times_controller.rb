@@ -68,7 +68,7 @@ class PunchTimesController < ApplicationController
   private
 
   def punch_time_params
-    params.require(:punch_time).permit(:in, :out, :description, :user_id, :project_id, :organization_id, :tag)
+    params.require(:punch_time).permit(:in, :out, :description, :user_id, :project_id, :organization_id, :latitude, :longitude)
   end
 
   def get_user

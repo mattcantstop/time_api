@@ -1,10 +1,13 @@
-// Get the current location
-navigator.geolocation.getCurrentPosition(showMap);
-
-
-function showMap(position) {
-  Show a map centered at position
+function successHandler(location) {
+  document.getElementById('latitude').value = location.coords.latitude;
+  document.getElementById('longitude').value = location.coords.longitude;
 }
 
-latitude = position.coords.latitude;
-longitude = position.coords.longitude;
+function errorHandler(error) {
+  alert('Attempt to get location failed: ' + error.message);
+}
+
+function genarate(hiddenField){
+  var field = document.getElementById(hiddenField);
+  field.value = location.coords.longitude;
+}

@@ -77,3 +77,9 @@ link a:hover {
   background-color: #00b7cd;
   color: #fff;
 }
+
+.punch img {
+  padding: 5px;
+  border: 1px solid #00b7cd;
+  margin: 15px;
+}
