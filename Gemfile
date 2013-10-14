@@ -52,6 +52,7 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem "unicorn", "~> 4.3.1"
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
