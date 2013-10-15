@@ -1,12 +1,13 @@
 module PunchTimesHelper
 
   def belongs_to_org?
-    if @user.organizations.any?
-      return true
-    else
-      return false
-    end
+    return true ? @user.organizations.any? : false
   end
+  
+  def belongs_to_project?
+    return true ? @user.projects.any? : false
+  end
+
 
   def month_and_day(punch)
     punch.strftime('%a, %b %d')

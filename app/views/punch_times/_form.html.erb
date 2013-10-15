@@ -3,15 +3,17 @@
   <%= f.hidden_field :latitude, id: "latitude" %>
   <%= f.hidden_field :longitude, id: "longitude" %>
 <% if belongs_to_org? %>
-<div class="form-group input-sm">
-  <%= f.label "Organization Id", class: "sr-only" %>
-  <%= collection_select(:organization, :organization_id, Organization.where(:id => @user.id), :id, :name, {:prompt => "Organization (optional)"}, {class: "form-control"})  %>
-</div>
+  <div class="form-group input-sm">
+    <%= f.label "Organization Id", class: "sr-only" %>
+    <%= collection_select(:organization, :organization_id, Organization.where(:id => @user.id), :id, :name, {:prompt => "Organization (optional)"}, {class: "form-control"})  %>
+  </div>
 <% end %>
-<div class="form-group input-sm">
-  <%= f.label "Project Id", class: "sr-only" %>
-  <%= collection_select(:project, :project_id, Project.where(:id => @user.id), :id, :name, {:prompt => 'Project (optional)'}, {:class => 'form-control'}) %>
-</div>
+<% if belongs_to_project? %>
+  <div class="form-group input-sm">
+    <%= f.label "Project Id", class: "sr-only" %>
+    <%= collection_select(:project, :project_id, Project.where(:id => @user.id), :id, :name, {:prompt => 'Project (optional)'}, {:class => 'form-control'}) %>
+  </div>
+<% end %>
 <div class="form-group input-sm">
   <%= f.label "Description", class: "sr-only" %>
   <%= f.text_field :description, class: "form-control", placeholder: "Description" %>
