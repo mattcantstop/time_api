@@ -26,19 +26,19 @@
     <div class='date col-md-3'>
       <%= month_and_day(punch_time.in) %>
     </div>
-      <div class='col-md-4'>
-        <span><%= punch_time.description if punch_time.description %></span>
-      </div>
-    <% if punch_time.complete? %>
-      <div class="col-md-3">
-        <span>
-          <%= link_to "#{ display_punch_duration(punch_time.total_punch_time) }", user_punch_time_url(@user, punch_time) if punch_time.total_punch_time %>
-        </span>
-      </div>
-    <% else %>
-      <div class='col-md-2'>
-        <%= link_to "Clock Out", user_out_path(current_user, punch_time.id), :method=> :put, class: "punch_out" %>
-      </div>
-    <% end %>
+    <div class='col-md-4'>
+      <span><%= punch_time.description if punch_time.description %></span>
+    </div>
+  <% if punch_time.complete? %>
+    <div class="col-md-3">
+      <span>
+        <%= link_to "#{ display_punch_duration(punch_time.total_punch_time) }", user_punch_time_url(@user, punch_time) if punch_time.total_punch_time %>
+      </span>
+    </div>
+  <% else %>
+    <div class='col-md-2'>
+      <%= link_to "Clock Out", user_out_path(current_user, punch_time.id), :method=> :put, class: "punch_out" %>
+    </div>
+  <% end %>
   </div>
 <% end %>
