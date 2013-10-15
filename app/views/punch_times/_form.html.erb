@@ -14,6 +14,16 @@
     <%= collection_select(:project, :project_id, Project.where(:id => @user.id), :id, :name, {:prompt => 'Project (optional)'}, {:class => 'form-control'}) %>
   </div>
 <% end %>
+
+<%= form.select :organization, :organization_id, :include_blank => "Select Organization"%><br />
+  <%= form.collection_select :make_id, Make.all, :id, :name, :include_blank => "Select Make" %><br />
+  <%= form.collection_select(:model_id, Model.find_all_by_make_id(@models), :id, :name, options ={:prompt => "Select Model"}) %> 
+
+<%= form.select :year, @years, :include_blank => "Select Year"%><br />
+  <%= form.collection_select :make_id, Make.all, :id, :name, :include_blank => "Select Make" %><br />
+  <%= form.collection_select(:model_id, Model.find_all_by_make_id(@models), :id, :name, options ={:prompt => "Select Model"}) %> 
+
+
 <div class="form-group input-sm">
   <%= f.label "Description", class: "sr-only" %>
   <%= f.text_field :description, class: "form-control", placeholder: "Description" %>
