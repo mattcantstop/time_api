@@ -1,4 +1,4 @@
-<%= form_for [@user, PunchTime.new], :html => {:class => "form-inline", role: "form"} do |f| %>
+<%= form_for [@user, PunchTime.new], :html => {:class => "form-inline", role: "form", :multipart => true } do |f| %>
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :latitude, id: "latitude" %>
   <%= f.hidden_field :longitude, id: "longitude" %>
@@ -15,9 +15,9 @@
   </div>
 <% end %>
 
-<%= form.select :organization, :organization_id, :include_blank => "Select Organization"%><br />
-  <%= form.collection_select :make_id, Make.all, :id, :name, :include_blank => "Select Make" %><br />
-  <%= form.collection_select(:model_id, Model.find_all_by_make_id(@models), :id, :name, options ={:prompt => "Select Model"}) %> 
+<%= f.select :organization, UsersOrganizations.get_all_users_orgs(@user), :include_blank => "Select Organization"%><br />
+  <%= f.collection_select :make_id, Make.all, :id, :name, :include_blank => "Select Make" %><br />
+  <%= f.collection_select(:model_id, Model.find_all_by_make_id(@models), :id, :name, options ={:prompt => "Select Model"}) %> 
 
 <%= form.select :year, @years, :include_blank => "Select Year"%><br />
   <%= form.collection_select :make_id, Make.all, :id, :name, :include_blank => "Select Make" %><br />
