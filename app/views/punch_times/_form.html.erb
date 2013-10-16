@@ -5,13 +5,13 @@
 <% if belongs_to_org? %>
   <div class="form-group input-sm">
     <%= f.label "Organization Id", class: "sr-only" %>
-    <%= collection_select(:organization, :organization_id, Organization.where(:id => @user.id), :id, :name, {:prompt => "Organization (optional)"}, {class: "form-control"})  %>
+    <%= collection_select(:organization, :organization_id, @organizations, :id, :name, {:prompt => "Organization (optional)"}, {class: "form-control"})  %>
   </div>
 <% end %>
 <% if belongs_to_project? %>
   <div class="form-group input-sm">
     <%= f.label "Project Id", class: "sr-only" %>
-    <%= collection_select(:project, :project_id, Project.where(:id => @user.id), :id, :name, {:prompt => 'Project (optional)'}, {:class => 'form-control'}) %>
+    <%= collection_select(:project, :project_id, @projects, :id, :name, {:prompt => 'Project (optional)'}, {:class => 'form-control'}) %>
   </div>
 <% end %>
 <div class="form-group input-sm">

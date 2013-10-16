@@ -4,11 +4,14 @@ class PunchTimesController < ApplicationController
   
   def index
     @punch_times = @user.punch_times.limit(20).order("created_at DESC")
+    @organizations = @user.organizations
+    @projects = @user.projects
   end
 
   def new
     if @user.all_punches_complete?
       @punch_time = @user.punch_times.new(params[:punch_time])
+      
     else
       flash[:error] = "You are still clocked in."
     end
