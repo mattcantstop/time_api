@@ -2,10 +2,11 @@ module ApplicationHelper
   module ElapsedTime 
 
     def self.calculate(duration)
+      return "Less than a minute" if duration < 60
       time_measurements = {years: 31536000, months: 2678400, days: 86400, hours: 3600, minutes: 60}
       display_text  = ''
       time_measurements.each do |time_description, time_in_seconds|
-        quotient = duration / time_in_seconds if duration >= time_in_seconds
+        quotient = duration / time_in_seconds if duration >= time_in_seconds 
         duration = duration % time_in_seconds if quotient
         display_text << "#{quotient} #{time_description} " if quotient
       end
