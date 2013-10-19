@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   has_many :punch_times
   has_many :user_projects
   has_many :projects, :through => :user_projects
-  has_many :user_organizations
-  has_many :organizations, :through => :user_organizations
+  has_many :memberships
+  has_many :organizations, :through => :memberships
 
   def all_punches_complete?
     self.punch_times.all? { |punch_time| punch_time.complete? }
