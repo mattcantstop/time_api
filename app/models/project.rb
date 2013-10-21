@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  belongs_to :user
-  belongs_to :punch_time
+  has_many :users_projects
+  has_many :users, :through => :users_projects
 
 end

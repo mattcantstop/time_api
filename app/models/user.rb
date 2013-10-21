@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :punch_times
-  has_many :user_projects
-  has_many :projects, :through => :user_projects
+  has_many :users_projects
+  has_many :projects, :through => :users_projects
   has_many :memberships
   has_many :organizations, :through => :memberships
 
