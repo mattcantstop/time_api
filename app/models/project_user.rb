@@ -1,4 +1,4 @@
-class UsersProject < ActiveRecord::Base
+class ProjectUser < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :project
