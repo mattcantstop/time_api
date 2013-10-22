@@ -4,7 +4,7 @@ class PunchTimesController < ApplicationController
   
   def index
     @punch_times = @user.punch_times.limit(20).order("created_at DESC")
-    @organizations = @user.organizations
+    @organizations = @user.memberships
     @projects = @user.projects
   end
 
