@@ -19,8 +19,8 @@ class PunchTimesController < ApplicationController
   def create
     @punch_time = @user.punch_times.new(punch_time_params)
     @punch_time.in = Time.now
-    @punch_time.project_id = params[:project][:project_id] if @punch_time.project_id
-    @punch_time.organization_id = params[:organization][:organization_id] if @punch_time.organization_id
+    @punch_time.project_id = params[:project][:project_id]
+    @punch_time.organization_id = params[:organization][:organization_id]
     if @punch_time.save
       redirect_to user_punch_times_path(@user)
       flash[:notice] = "Successfully clocked in."

@@ -5,7 +5,7 @@
 <% if belongs_to_org? %>
   <div class="form-group input-sm">
     <%= f.label "Organization Id", class: "sr-only" %>
-    <%= collection_select(:organization, :organization_id, @organizations, :id, :org_name, {:prompt => "Organization (optional)"}, {class: "form-control"})  %>
+    <%= collection_select(:organization, :organization_id, @organizations, :organization_id, :org_name, {:prompt => "Organization (optional)"}, {class: "form-control"})  %>
   </div>
 <% end %>
 <% if belongs_to_project? %>
