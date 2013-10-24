@@ -2,12 +2,6 @@
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :latitude, id: "latitude" %>
   <%= f.hidden_field :longitude, id: "longitude" %>
-<% if belongs_to_org? %>
-  <div class="form-group input-sm">
-    <%= f.label "Organization Id", class: "sr-only" %>
-    <%= collection_select(:organization, :organization_id, @organizations, :organization_id, :org_name, {:prompt => "Organization (optional)"}, {class: "form-control"})  %>
-  </div>
-<% end %>
 <% if belongs_to_project? %>
   <div class="form-group input-sm">
     <%= f.label "Project Id", class: "sr-only" %>
