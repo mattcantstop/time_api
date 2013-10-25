@@ -1,7 +1,8 @@
-class MembershipsController < ApplicationController
+class UsersOrganizationsController < ApplicationController
 
   def new
-    @membership = @user.memberships.new(params[:membership])
+    @users_organization = @users.organizations.new(params[:users_organizations])
   end
+
 
 end
