@@ -1,5 +1,9 @@
-<%= form_for([@user,@organization]) do |f| %>
-  <%= f.text_field :name, placeholder: "Name Your Organization" %>
+<%= form_for [@user,@organization], :html => { :class => "form-inline", role: "form", :mulitpart => true } do |f| %>
+  <div class="form-group input-sm">
+    <%= f.text_field :name, placeholder: "Organization Name", class: "form-control" %>
+  </div>
   <%= f.hidden_field :user_id %>
-  <%= f.submit "Create Organization" %>
+  <div class="form-group input-sm">
+    <%= f.submit "Create Organization", class: "btn btn-default" %>
+  </div>
 <% end %>

@@ -1,11 +1,11 @@
 TimeApi::Application.routes.draw do
-  
+
   get "users/show"
   devise_scope :user do
     root "devise/sessions#new"
   end
 
-  devise_for :users 
+  devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :users do 
     resources :punch_times

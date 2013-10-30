@@ -2,5 +2,8 @@
   <%= @user.first_name if @user.first_name %>
   <%= @user.last_name if @user.last_name %>
 </h1>
-  <%= @user.email if @user.email%>
+  <%= @user.email if @user.email %>
   <%= @user.time_zone if @user.time_zone %>
+  <% @user.organizations.each do |org| %>
+    <%= org.name %>
+  <% end %>
