@@ -24,6 +24,10 @@ module ApplicationHelper
     end
   end
 
+  def complete_name(user)
+    name = user.first_name + " #{user.last_name}"
+  end
+
   def display_punch_duration(int)
     ElapsedTime.calculate(int)
   end
