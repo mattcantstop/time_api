@@ -4,3 +4,6 @@
 </h1>
   <%= @user.email %>
   <%= @user.time_zone %>
+  <% @user.organizations.each do |org| %>
+    <%= org.name %>
+  <% end %>
