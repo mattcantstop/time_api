@@ -3,7 +3,7 @@
     <%= complete_name(@user) %>
   </h1>
 </div>
-<div class="row">
+<div class="row col-md-6">
   <table class="table table-striped">
     <tr>
       <td style="width: 25%">Email:</td>
@@ -19,7 +19,7 @@
     </tr> 
   </table>
 </div>
-<div class="row">
+<div class="row col-md-7">
   <h3>Organization</h3>
   <div class="organization">
     <% @user.organizations.each do |org| %>
