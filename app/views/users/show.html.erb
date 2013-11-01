@@ -23,7 +23,7 @@
   <h3>Organization</h3>
   <div class="organization">
     <% @user.organizations.each do |org| %>
-      <%= org.name %>
+      <%= link_to "#{org.name}", user_organization_path(@user, org) %>
     <% end %>
   </div>
 </div>
