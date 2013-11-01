@@ -36,4 +36,8 @@ module ApplicationHelper
     punch.strftime('%H:%M')
   end
 
+  def display_date(time)
+    time.strftime('%b %d %Y')
+  end
+
 end

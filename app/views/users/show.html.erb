@@ -1,14 +1,23 @@
 <div class="row">
   <h1>
     <%= complete_name(@user) %>
-</h1>
+  </h1>
+</div>
+<div class="row">
+  <table class="table table-striped">
+    <tr>
+      <td style="width: 25%">Time In:</td>
+      <td><%= date_and_time(@punch_time.in) %></td>
+    </tr>
   <%= @user.email if @user.email %>
   <%= @user.time_zone if @user.time_zone %>
-  <div class="organizations">
-    <h3>Organization</h3>
-    <div class="organization">
-      <% @user.organizations.each do |org| %>
-        <%= org.name %>
+  <%= display_date(@user.created_at) %>
+</div>
+<div class="row">
+  <h3>Organization</h3>
+  <div class="organization">
+    <% @user.organizations.each do |org| %>
+      <%= org.name %>
     <% end %>
-    </div>
   </div>
+</div>
