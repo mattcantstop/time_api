@@ -1,2 +1,10 @@
-<%= @organization.name %>
+<div class='row'>
+  <%= @organization.name %>
+</div>
+<div class='row'>
+  <% if @organization.user_id == current_user %>
+    Hello
+  <% end %>
+</div>
+
 
